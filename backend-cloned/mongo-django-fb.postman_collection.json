@@ -1,0 +1,875 @@
+{
+	"info": {
+		"_postman_id": "b1621324-7513-4c76-8cdc-4daeb8b4e2f2",
+		"name": "mongo-django-fb",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Comment",
+			"item": [
+				{
+					"name": "get comment of a user by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{mongotime}}/comments/6",
+							"host": [
+								"{{mongotime}}"
+							],
+							"path": [
+								"comments",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get comments of a user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{mongotime}}/comments",
+							"host": [
+								"{{mongotime}}"
+							],
+							"path": [
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post a comment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"comment_content\": \"Random comment.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{mongotime}}/comments/1",
+							"host": [
+								"{{mongotime}}"
+							],
+							"path": [
+								"comments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete comment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{mongotime}}/comments/7",
+							"host": [
+								"{{mongotime}}"
+							],
+							"path": [
+								"comments",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update a comment",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"comment_content\": \"You look so ugly dude. DO some workout!Quickk mannnn\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{mongotime}}/comments/1",
+							"host": [
+								"{{mongotime}}"
+							],
+							"path": [
+								"comments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Friendship",
+			"item": [
+				{
+					"name": "get friendships  of a user by friendship id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{mongotime}}/friendships/7",
+							"host": [
+								"{{mongotime}}"
+							],
+							"path": [
+								"friendships",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get sent friend reqeust of a user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{mongotime}}/friendships",
+							"host": [
+								"{{mongotime}}"
+							],
+							"path": [
+								"friendships"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get received friend reqeust of a user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{mongotime}}/friendships2",
+							"host": [
+								"{{mongotime}}"
+							],
+							"path": [
+								"friendships2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a friend request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{mongotime}}/friendships/1",
+							"host": [
+								"{{mongotime}}"
+							],
+							"path": [
+								"friendships",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Accept a friend request",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{mongotime}}/friendships/4",
+							"host": [
+								"{{mongotime}}"
+							],
+							"path": [
+								"friendships",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reject friend request",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{mongotime}}/friendships/7",
+							"host": [
+								"{{mongotime}}"
+							],
+							"path": [
+								"friendships",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get my friends",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{mongotime}}/friendsList",
+							"host": [
+								"{{mongotime}}"
+							],
+							"path": [
+								"friendsList"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "comment like",
+			"item": [
+				{
+					"name": "toggle a like in the comment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{mongotime}}/likeComment/10",
+							"host": [
+								"{{mongotime}}"
+							],
+							"path": [
+								"likeComment",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all the comment likes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{mongotime}}/likeComment",
+							"host": [
+								"{{mongotime}}"
+							],
+							"path": [
+								"likeComment"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Post like",
+			"item": [
+				{
+					"name": "Post a like in the post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{mongotime}}/likePost/1",
+							"host": [
+								"{{mongotime}}"
+							],
+							"path": [
+								"likePost",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all the postlikes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{mongotime}}/likePost",
+							"host": [
+								"{{mongotime}}"
+							],
+							"path": [
+								"likePost"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "post create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n       \r\n        \"content\": \"look at how I look in the anime world 2.\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{mongotime}}/posts",
+							"host": [
+								"{{mongotime}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Post",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n       \r\n        \"content\": \"look at how I look in the anime world 2 updated.\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{mongotime}}/posts/3",
+							"host": [
+								"{{mongotime}}"
+							],
+							"path": [
+								"posts",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all posts of a user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{mongotime}}/posts",
+							"host": [
+								"{{mongotime}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete this post",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{mongotime}}/posts/3",
+							"host": [
+								"{{mongotime}}"
+							],
+							"path": [
+								"posts",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Hero",
+			"item": [
+				{
+					"name": "get all stuff",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{mongotime}}/hero",
+							"host": [
+								"{{mongotime}}"
+							],
+							"path": [
+								"hero"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{mongotime}}/hero/2",
+							"host": [
+								"{{mongotime}}"
+							],
+							"path": [
+								"hero",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post stuff",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n       \r\n        \"name\":\"asdf\",\r\n        \"alias\": \"asdfdf\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{mongotime}}/hero",
+							"host": [
+								"{{mongotime}}"
+							],
+							"path": [
+								"hero"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "put stuff",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n       \r\n        \"name\": \"Nishinoyadfdf1sd\"\r\n        \r\n      \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{mongotime}}/hero/2",
+							"host": [
+								"{{mongotime}}"
+							],
+							"path": [
+								"hero",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete hero",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{mongotime}}/hero/1",
+							"host": [
+								"{{mongotime}}"
+							],
+							"path": [
+								"hero",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "token",
+			"item": [
+				{
+					"name": "get token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin@1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{mongotime}}/token",
+							"host": [
+								"{{mongotime}}"
+							],
+							"path": [
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get access token by refresh token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin123",
+									"type": "text"
+								},
+								{
+									"key": "refresh",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY1MzM3MzYzNCwiaWF0IjoxNjUzMjg3MjM0LCJqdGkiOiI4MTlkYzk4ODIxYTU0N2EzYWFiNTMyMWJjY2FhZjkzYiIsInVzZXJfaWQiOjF9.8qr_8SYQWf9C1trgw8VvcDVvoocLPrcpLhik2OIaSTg",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{mongotime}}/token/refresh",
+							"host": [
+								"{{mongotime}}"
+							],
+							"path": [
+								"token",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User login register stuff",
+			"item": [
+				{
+					"name": "login post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "shoyo@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin@1234",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{mongotime}}/login",
+							"host": [
+								"{{mongotime}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout delete the access token cookie.",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{mongotime}}/login",
+							"host": [
+								"{{mongotime}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "Acer",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "ace@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin123",
+									"type": "text"
+								},
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": "/C:/Users/User/Downloads/IMG_0791_(1).jpg"
+								},
+								{
+									"key": "coverPicture",
+									"type": "file",
+									"src": "/C:/Users/User/Downloads/background.jpg"
+								},
+								{
+									"key": "isAdmin",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "desc",
+									"value": "Striker",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "Japan",
+									"type": "text"
+								},
+								{
+									"key": "placeFrom",
+									"value": "Tokyo",
+									"type": "text"
+								},
+								{
+									"key": "relationship",
+									"value": "0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{mongotime}}/register",
+							"host": [
+								"{{mongotime}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change password",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "password",
+									"value": "admin123",
+									"type": "text"
+								},
+								{
+									"key": "password1",
+									"value": "admin@1234",
+									"type": "text"
+								},
+								{
+									"key": "password2",
+									"value": "admin@1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{mongotime}}/changepassword",
+							"host": [
+								"{{mongotime}}"
+							],
+							"path": [
+								"changepassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "desc",
+									"value": "Edited Description",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin@123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{mongotime}}/updateuser",
+							"host": [
+								"{{mongotime}}"
+							],
+							"path": [
+								"updateuser"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "test userid",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{mongotime}}/test",
+					"host": [
+						"{{mongotime}}"
+					],
+					"path": [
+						"test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "testParams",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{mongotime}}/testParams/1/909",
+					"host": [
+						"{{mongotime}}"
+					],
+					"path": [
+						"testParams",
+						"1",
+						"909"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

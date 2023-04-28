@@ -1,0 +1,46 @@
+routing to different url based on the value of a state.
+
+I can just do return authToken? ( <Navigate to={"/loginPage"} /> ): (<div> stuff </div>)
+
+in each of the component.
+
+But, using oulet in an external Component optimizes that thing in the form of nested routes
+
+const PrivateRoutes = () => {
+  const { authToken } = useContext(ResponseContext1);
+
+  return authToken ? <Outlet /> : <Navigate to="/loginPage" />;
+};
+
+and in APp,
+   <Routes>
+            <Route element={<PrivateRoutes />}>
+              <Route path="/" exact element={<HomePage />} /> 
+               <Route path ='here I can put any url ' which can be accessible only
+if the authToken is true.
+            </Route>
+            <Route path="/loginPage" element={<LoginPage />} />
+          </Routes> 
+
+so, to redirect the user to homePage if the authToken is true and we open LoginPage,
+i did simply this,
+in Loginpage, 
+
+return authToken ? (
+    <Navigate to="/" />
+  ) : (
+    <div> stuff </div> )
+
+As I can see in my code,
+AuthContext.js maa
+AuthContext bhanne createContext cha
+tyesma AuthProvider bhanne function cha jasmaa maa sabei functions and state initiate 
+gareko cha.
+yesko props maa children bhanera lekheko cha, so that APP function maa sabei Routes
+yesbhitra rakhne, ani yesmaa provide gareko values sabei maa access huncha.
+
+this is the ideal way to do , since pahila maile Login.js maa loginUser ko function 
+use garera state change garna khojthe.
+
+just use the function in the uppermost hierarchy and just call it and access it from 
+lower places.
