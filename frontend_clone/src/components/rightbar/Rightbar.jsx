@@ -54,7 +54,7 @@ const Rightbar = ({ profile, messenger }) => {
         <div className="birthdayContainer">
           <img src="assets/birthday.png" className="birthdayImg" alt="" />
           <span className="birthdayText">
-            <b>Simran Lageju </b> and{" "}
+            <b>Pratima Chhetri</b> and{" "}
             <b>4 other friends have birthday today </b>
           </span>
         </div>
