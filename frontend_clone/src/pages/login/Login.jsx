@@ -17,10 +17,9 @@
 import "./login.css";
 
 import { AuthContext } from "../../AuthContext";
-import jwt_decode from "jwt-decode";
 
-import { useState, useContext, useEffect, authToken } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -33,11 +32,7 @@ export default function Login() {
     newData[e.target.id] = e.target.value;
     setData(newData);
   }
-  useEffect(() => {
-    if (user) {
-      navigate("/");
-    }
-  }, []);
+
 
   return (
     <div className="login">
@@ -69,7 +64,7 @@ export default function Login() {
               id="password"
               type="password"
               placeholder="Password"
-              calue={mainData.password}
+              value={mainData.password}
               className="loginInput"
             />
             <button type="submit" className="loginButton">

@@ -6,12 +6,12 @@ import { GetOneUser } from "../../api/getApi.tsx";
 
 
 export default function Message({ message, own, currentChat }) {
-   const {user,mainUser, authToken } =
+   const { authToken } =
     useContext(AuthContext);
     const [targetUser, setTargetUser] = useState(null);
     // have to do message.sender instead of user.user_id because this is inside message ko iteration.
     const [loading, setLoading] = useState(true);
-    const  [friendOrSelfId, setFriendOrSelfId] = useState(()=>
+    const  [friendOrSelfId] = useState(()=>
     currentChat.sender === message.sender
         ? currentChat.sender
         : currentChat.receiver

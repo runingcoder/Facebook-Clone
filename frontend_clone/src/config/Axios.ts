@@ -1,6 +1,6 @@
 import axios from "axios";
-
-import { domain } from "./url.ts";
+ // @ts-ignore
+import { domain } from "./url.tsx";
 axios.defaults.withCredentials = true;
 
 const Axios = axios.create({
