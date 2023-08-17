@@ -13,6 +13,12 @@ const Share = () => {
 
 const {user, mainUser, getMainUser} =
 useContext(AuthContext);
+
+
+let hero = "http://pets-images.dev-apis.com/pets/none.jpg";
+if (mainUser?.profilePicture.length) {
+  hero = mainUser?.profilePicture;
+}
 useEffect(() => {
   getMainUser();
 }, [user]);
@@ -22,7 +28,7 @@ useEffect(() => {
         <div className="shareTop">
         <Link to={`/profile/${mainUser?.username}`}>
 
-          <img className="shareProfileImg" src={mainUser?.profilePicture} alt="" />
+          <img className="shareProfileImg" src={hero} alt="" />
           </Link>
           <input
             placeholder={` Whats in your mind ${mainUser?.first_name} ?`}

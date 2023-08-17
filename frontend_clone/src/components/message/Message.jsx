@@ -24,7 +24,7 @@ export default function Message({ message, own, currentChat }) {
       
       
         async function fetchUser() {
-        const answer = await GetOneUser(authToken.access, friendOrSelfId);
+        const answer = await GetOneUser(authToken?.access, friendOrSelfId);
         if (answer.status === 200) {
           
           // console.log(answer.data);

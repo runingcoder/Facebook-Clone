@@ -120,9 +120,9 @@
                 <>
                   <div className="chatBoxTop"  ref={scrollRef} >
                     {messages.map((m) => (
-                      <div>
-                        <Message key={m.id} message={m} own={m.sender === user.user_id} currentChat = {currentChat}/>
-                      </div>
+                      
+                      <Message message={m} own={m.sender === user.user_id} currentChat = {currentChat}/>
+                    
                     ))}
                   </div>
                 

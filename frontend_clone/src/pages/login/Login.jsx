@@ -54,6 +54,7 @@ export default function Login() {
               required
               onChange={(e) => handle(e)}
               id="email"
+              type="email"
               placeholder="Email"
               value={mainData.email}
               className="loginInput"
