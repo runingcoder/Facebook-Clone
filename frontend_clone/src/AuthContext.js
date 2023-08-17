@@ -15,6 +15,8 @@ const AuthProvider = ({ children }) => {
 
   const [currentUser, setCurrentUser] = useState([]);
   const [alertData, setAlertData] = useState([]);
+  const [alertDataLogin, setAlertDataLogin] = useState([]);
+
   const [usersList, setUsersList] = useState(null);
   const [mainData, setData] = useState({
     email: "",
@@ -53,8 +55,14 @@ const AuthProvider = ({ children }) => {
       setUser(jwt_decode(response.data.data.access));
       navigate("/");
     } else {
-      setAlertData(response.data);
+      setAlertDataLogin(response.data);
     }
+  }
+  function setAlertDataLoginFunc(data) {
+    setAlertDataLogin(data);
+  }
+  function setAlertDataFunc(data) {
+    setAlertData(data);
   }
   async function RegisterFunction(e) {
     e.preventDefault();
@@ -86,7 +94,7 @@ const AuthProvider = ({ children }) => {
   function OnClickGoToRegister() {
     navigate("/register");
   }
-  function onClickGoToTimeline(){
+  function onClickGoToTimeline() {
     navigate("/")
   }
   function OnClickGoToMessenger() {
@@ -146,18 +154,19 @@ const AuthProvider = ({ children }) => {
     }
   }
   async function getMainUser() {
-    const userMan = await GetOneUser(authToken.access,user.user_id);
-       if (userMan.status === 200) {
-        setMainUser(userMan.data);
-        // console.log(mainUser)
-       
+    const userMan = await GetOneUser(authToken.access, user.user_id);
+    if (userMan.status === 200) {
+      setMainUser(userMan.data);
+      // console.log(mainUser)
+
     }
   }
   let contextData = {
-    onClickGoToTimeline:onClickGoToTimeline,
+    onClickGoToTimeline: onClickGoToTimeline,
     getMainUser: getMainUser,
     mainUser: mainUser,
     setMainUser: setMainUser,
+    setAlertDataFunc: setAlertDataFunc,
     friends: friends,
     setFriends: setFriends,
     getFriends: getFriends,
@@ -175,6 +184,8 @@ const AuthProvider = ({ children }) => {
     usersList: usersList,
     loginUser: loginUser,
     alertData: alertData,
+    alertDataLogin: alertDataLogin,
+    setAlertDataLoginFunc: setAlertDataLoginFunc,
     user: user,
     setUser: setUser,
     mainData: mainData,

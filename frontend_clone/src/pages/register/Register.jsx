@@ -11,6 +11,7 @@ export default function Register() {
     registerData,
     setregisterData,
     alertData,
+    setAlertDataFunc,
     RegisterFunction,
     OnClickGoToLogin,
   } = useContext(AuthContext);
@@ -23,6 +24,8 @@ export default function Register() {
     if (user) {
       navigate("/");
     }
+    setAlertDataFunc("");
+
   }, []);
   return (
     <div className="login">
