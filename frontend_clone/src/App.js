@@ -5,7 +5,7 @@ import Profile from "./pages/profile/Profile";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import Messenger from "./pages/Messenger/Messenger";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import PrivateRoutesMain from "./AnotherRoute";
 import AuthProvider from "./AuthContext";
 import ScrollToTop from "./scrollToTop";

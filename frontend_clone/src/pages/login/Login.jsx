@@ -24,7 +24,7 @@ import { useNavigate } from "react-router-dom";
 export default function Login() {
   const navigate = useNavigate();
 
-  const { loginUser, mainData, setData, alertDataLogin,setAlertDataFunc, OnClickGoToRegister } =
+  const {user,  loginUser, mainData, setData, alertDataLogin,setAlertDataFunc, OnClickGoToRegister } =
     useContext(AuthContext);
 
   function handle(e) {
@@ -32,8 +32,11 @@ export default function Login() {
     newData[e.target.id] = e.target.value;
     setData(newData);
   }
-  useEffect(() => {
-  
+
+ useEffect(() => {
+    if (user) {
+      navigate("/");
+    }
     setAlertDataFunc("");
 
   }, []);

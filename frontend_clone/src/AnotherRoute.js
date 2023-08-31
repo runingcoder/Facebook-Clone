@@ -1,5 +1,4 @@
-import React, { useReducer } from "react";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { Navigate, Outlet } from "react-router-dom";
 import { AuthContext } from "./AuthContext";
 
