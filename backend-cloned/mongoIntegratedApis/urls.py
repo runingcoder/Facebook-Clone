@@ -68,5 +68,7 @@ urlpatterns = [
     path("friendships2", FriendsView2.as_view()),
     path("friendsList/<int:pk>", FriendsView3.as_view()),
 
+    
+
     # path('testParams/<int:a>/<int:b>', testParams, name='testParams'),
 ]

@@ -37,6 +37,9 @@ def auth_required():
 
     return decorator
 
+# not working if we don't provide a access token, so will just use class based views and 
+# IsAuthenticated permission for authen using jwt. 
+
 
 def check_auth():
     # token baata user id patta lagaune chig.

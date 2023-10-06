@@ -35,6 +35,7 @@ from django.contrib import messages
 from rest_framework.permissions import IsAuthenticated
 from django.conf import settings
 from django.contrib.auth import get_user_model
+# from decorator.auth_decorators import auth_required
 
 User = get_user_model()
 
@@ -268,6 +269,7 @@ class LoginView(APIView):
                         "role": role,
                         "id": user.id,
                     }
+                    print(response)
                     return response
                 else:
                     return Response(
@@ -443,7 +445,6 @@ class CommentView(APIView):
 
         else:
             return JsonResponse({'message': "This Comment is not found"})
-
 
 class PostView(APIView):
     permission_classes = [IsAuthenticated]
