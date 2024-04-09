@@ -9,7 +9,7 @@ export default function Online({ user }) {
       <div className="rightBarProfileImgContatiner">
         <Link to={`/profile/${user?.username}`}>
           <img
-            src={user?.profilePicture}
+            src={user?.profilePicture? user.profilePicture : 'https://amaxfireandsecurity.co.uk/wp-content/uploads/2023/12/profile-pic-MD.jpg' }
             alt=""
             className="rightBarProfileImg"
           />

@@ -29,7 +29,6 @@
     const { user, getFriends, authToken } =
       useContext(AuthContext);
   // just load this once when the page is reloaded again and again.
-
     useEffect(() => {
       async function GetConversationsofAUser() {
         const answer = await GetConvoOfAUser(user.user_id, authToken.access);
@@ -41,10 +40,6 @@
 
       GetConversationsofAUser();
     }, [user.user_id]);
-
-    useEffect(() => {
-      getFriends();
-    }, []);
     useEffect(() => {
       async function GetMessages() {
         if(currentChat){
@@ -71,26 +66,29 @@
 
       setMessages([...messages, res.data]);
       setNewMessage("");
-
+      setTimeout(() => {
+        if (scrollRef.current) {
+          scrollRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
+        }
+      }, 2000);
     };
     function OnclickSetCCAndLocalStorage(c){
       setCurrentChat(c)
       localStorage.setItem("currentChat", JSON.stringify(c))
+      console.log(scrollRef.current, 'here here1')
+      if (scrollRef.current) {
+        scrollRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
+      }
     }
     useEffect(() => {
-      if (scrollRef.current) {
-        scrollRef.current.scrollIntoView({ behavior: "smooth", block: "end" });
-      }
-    }, []);
-    useEffect(() => {
-      if (scrollRef.current) {
-        setTimeout(() => {
-          scrollRef.current.scrollIntoView({ behavior: "smooth", block: "end" });
-        }, 100);
-      }
-    }, [messages, currentChat]);
-
-
+      getFriends();    
+      setTimeout(() => {
+        if (scrollRef.current) {
+          scrollRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
+        }
+      }, 2000);
+    
+    }, []);   
   return (
       <>
         <TopBar />
@@ -118,7 +116,7 @@
             <div className="middleWrapper">
               {currentChat ? (
                 <>
-                  <div className="chatBoxTop"  ref={scrollRef} >
+                  <div className="chatBoxTop" ref={scrollRef} >
                     {messages.map((m) => (
                       
                       <Message message={m} own={m.sender === user.user_id} currentChat = {currentChat}/>
@@ -134,11 +132,12 @@
               )}
             </div>
             <div className="messageBottomBox"  >
-                    <textarea
+                             <textarea
                       className="chatMessage"
                       placeholder="write something..."
                       onFocus={console.log('sowthing')}
                       onChange={(e) => setNewMessage(e.target.value)}
+                      // onKeyDown={this.onEnterPress}
                       value={newMessage}
                     ></textarea>
                     <button type="submit" className="chatSubmit" onClick={handleSubmit} >

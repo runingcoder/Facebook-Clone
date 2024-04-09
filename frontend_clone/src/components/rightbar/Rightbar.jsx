@@ -52,13 +52,13 @@ const Rightbar = ({ profile, messenger }) => {
     return (
       <>
         <div className="birthdayContainer">
-          <img src="assets/birthday.png" className="birthdayImg" alt="" />
+          {/* <img src="assets/ad.jpg" alt=""  className="rightBarTopAd"/> */}
           <span className="birthdayText">
             <b>Pratima Chhetri</b> and{" "}
             <b>4 other friends have birthday today </b>
           </span>
         </div>
-        <img src="assets/ad.jpg" alt="" className="rightBarAd" />
+        <img src="assets/adcover.jpg" alt="" className="rightBarAd" />
         <h4 className="rightBarTitle">Online Friends</h4>
         <ul className="rightBarFriendList">
           {userList.map((u) => (
